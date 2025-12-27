@@ -1,0 +1,14 @@
+{
+    "name": "asa-electronics/backend",
+    "description": "Backend API for Asa Electronics E-Commerce Platform",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "firebase/php-jwt": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AsaElectronics\\": "src/"
+        }
+    }
+}
