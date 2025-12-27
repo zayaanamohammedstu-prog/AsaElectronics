@@ -38,6 +38,7 @@ const CheckoutPage = () => {
 
       if (paymentResponse.status && paymentResponse.data.authorization_url) {
         // Redirect to PayStack payment page
+        // Note: Using window.location for external redirect (PayStack checkout)
         window.location.href = paymentResponse.data.authorization_url
       } else {
         alert('Failed to initialize payment')

@@ -34,7 +34,19 @@ class Auth {
     }
 
     public function getAuthorizationToken() {
-        $headers = apache_request_headers();
+        // Try to get headers from apache_request_headers first (if available)
+        if (function_exists('apache_request_headers')) {
+            $headers = apache_request_headers();
+        } else {
+            // Fallback for non-Apache servers
+            $headers = [];
+            foreach ($_SERVER as $key => $value) {
+                if (substr($key, 0, 5) === 'HTTP_') {
+                    $header = str_replace(' ', '-', ucwords(str_replace('_', ' ', strtolower(substr($key, 5)))));
+                    $headers[$header] = $value;
+                }
+            }
+        }
         
         if (isset($headers['Authorization'])) {
             $auth = $headers['Authorization'];

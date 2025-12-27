@@ -9,7 +9,7 @@ return [
     ],
     
     'jwt' => [
-        'secret' => getenv('JWT_SECRET') ?: 'your-secret-key-change-in-production',
+        'secret' => getenv('JWT_SECRET') ?: null, // Must be set in production
         'algorithm' => 'HS256',
         'expiration' => 86400 // 24 hours
     ],

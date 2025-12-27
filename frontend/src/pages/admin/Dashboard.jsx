@@ -44,6 +44,7 @@ const AdminDashboard = () => {
 
   const loadDashboardData = async () => {
     try {
+      // Note: Using high limits for demo. In production, implement pagination or incremental loading
       const [ordersData, productsData, analyticsData] = await Promise.all([
         getOrders({ limit: 1000 }),
         getProducts({ limit: 1000 }),

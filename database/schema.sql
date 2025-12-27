@@ -140,7 +140,8 @@ CREATE TABLE IF NOT EXISTS analytics_events (
     INDEX idx_created (created_at)
 );
 
--- Insert default admin user (password: admin123 - CHANGE IN PRODUCTION)
+-- Insert default admin user (password: admin123 - CHANGE IMMEDIATELY IN PRODUCTION!)
+-- Note: This default account should be deleted or password changed after setup
 INSERT INTO users (email, password_hash, first_name, last_name, role) 
 VALUES ('admin@asaelectronics.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Admin', 'User', 'admin');
 

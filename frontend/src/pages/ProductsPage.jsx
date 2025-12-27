@@ -48,6 +48,7 @@ const ProductsPage = () => {
   const handleAddToCart = (product) => {
     addToCart(product, 1)
     logAddToCart(product.id, product.name)
+    // Using alert for simplicity - consider implementing a toast notification system
     alert(`${product.name} added to cart!`)
   }
 
