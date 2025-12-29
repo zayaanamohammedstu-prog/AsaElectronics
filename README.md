@@ -1,33 +1,94 @@
 # Asa Electronics E-Commerce Platform
 
-A modern, full-stack e-commerce platform for selling electronics with PayStack payments, React admin dashboard with Chart.js/D3.js analytics, JWT/OAuth authentication, and Google Analytics integration.
+> **⚡ Now Available in Pure PHP!**  
+> This e-commerce platform is now built entirely with **PHP**, **MySQL**, **HTML**, **CSS**, and **JavaScript** - **no frameworks required**!
 
-## 🚀 Features
+A modern, full-stack e-commerce platform for selling electronics with PayStack payments, admin dashboard with Chart.js analytics, and excellent UI/UX design.
 
-### Frontend (React)
-- **Modern React Application** with Vite for fast development
-- **Product Catalog** with search and category filtering
-- **Shopping Cart** with local storage persistence
-- **User Authentication** (Register/Login with JWT)
-- **Secure Checkout** with PayStack payment integration
-- **Admin Dashboard** with real-time analytics
-- **Chart.js & D3.js** visualizations for sales and order data
-- **Google Analytics** integration for tracking
-- **Responsive Design** for mobile and desktop
+## 🎯 Two Implementations Available
+
+### 1. **Pure PHP Version** (Recommended - New!)
+- ✅ **No frameworks** - Pure PHP, MySQL, HTML, CSS, JavaScript
+- ✅ **Simple setup** - One installation script
+- ✅ **Works with phpMyAdmin** - Easy database management
+- ✅ **Modern UI/UX** - Beautiful, responsive design
+- ✅ **Full e-commerce functionality** - Complete shopping experience
+- 📖 [**Read PHP Documentation →**](README-PHP.md)
+- 🚀 [**Quick Setup Guide →**](SETUP-QUICK.md)
+
+### 2. Legacy React Version
+- Uses React frontend with PHP backend
+- Requires Node.js and npm
+- More complex setup process
+- See below for React setup instructions
+
+---
+
+## 🚀 Features (PHP Version)
+
+### Customer Features
+- **Modern, Responsive Design** - Works perfectly on all devices
+- **Product Catalog** - Browse with search and category filtering
+- **Shopping Cart** - Session-based cart management
+- **User Authentication** - Secure registration and login
+- **Checkout Process** - Smooth checkout with PayStack integration
+- **Order Tracking** - View order history and status
+- **Payment Integration** - Secure PayStack payment processing
+
+### Admin Dashboard
+- **Analytics Dashboard** - Real-time sales and order statistics
+- **Chart.js Visualizations** - Beautiful sales and status charts
+- **Product Management** - Full CRUD operations
+- **Order Management** - Update status and view details
+- **User Management** - Customer statistics and information
+- **Inventory Tracking** - Stock management and alerts
 
 ### Backend (PHP/MySQL)
-- **RESTful API** with clean architecture
-- **JWT Authentication** for secure API access
-- **OAuth Support** for Google login
-- **PayStack Integration** for international payments
-- **Product Management** with full CRUD operations
-- **Order Processing** with status tracking
-- **User Management** with role-based access control
-- **Analytics API** for dashboard metrics
-- **CORS Support** for cross-origin requests
-- **Input Validation** and SQL injection prevention
+- **Session-based Authentication** - Secure user sessions
+- **CSRF Protection** - Token-based form security
+- **XSS Protection** - Output escaping and sanitization
+- **PayStack Integration** - International payment processing
+- **Product Management** - Full CRUD operations
+- **Order Processing** - Complete order workflow
+- **User Management** - Role-based access control
+- **Input Validation** - SQL injection prevention
 
-## 📋 Prerequisites
+## 📋 Prerequisites (PHP Version)
+
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+- Apache web server (or PHP built-in server for development)
+- phpMyAdmin (optional, for database management)
+
+## 🛠️ Installation (PHP Version - Recommended)
+
+### Quick Setup (5 minutes)
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/zayaanamohammedstu-prog/AsaElectronics.git
+cd AsaElectronics
+
+# 2. Run the installation script
+./install.sh
+
+# 3. Start the development server
+cd public
+php -S localhost:8000
+
+# 4. Open your browser
+# Store: http://localhost:8000
+# Admin: http://localhost:8000/admin/dashboard.php
+# Login: admin@asaelectronics.com / admin123
+```
+
+### Manual Setup
+
+See [SETUP-QUICK.md](SETUP-QUICK.md) or [README-PHP.md](README-PHP.md) for detailed instructions.
+
+---
+
+## 📋 Prerequisites (React Version - Legacy)
 
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
