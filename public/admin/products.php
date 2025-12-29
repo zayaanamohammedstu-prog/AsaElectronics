@@ -83,9 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $product = getProduct($pdo, $id);
         if ($product && $product['image_url']) {
             $uploadDir = dirname(__DIR__, 2) . '/uploads/';
-            $imagePath = $uploadDir . basename($product['image_url']);
-            if (file_exists($imagePath)) {
-                unlink($imagePath);
+            // Validate filename to prevent directory traversal
+            $filename = basename($product['image_url']);
+            if (preg_match('/^[a-zA-Z0-9_\-\.]+$/', $filename)) {
+                $imagePath = $uploadDir . $filename;
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
             }
         }
         
@@ -198,7 +202,7 @@ $categories = getCategories($pdo);
                     </td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn btn-outline" onclick='editProduct(<?php echo json_encode($product); ?>)'>
+                            <button class="btn btn-outline" onclick='editProduct(<?php echo htmlspecialchars(json_encode($product), ENT_QUOTES); ?>)'>
                                 <i class="fas fa-edit"></i>
                             </button>
                             <form method="POST" style="display: inline;">

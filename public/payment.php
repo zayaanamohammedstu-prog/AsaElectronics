@@ -50,9 +50,9 @@ include __DIR__ . '/includes/header.php';
 <script>
 document.getElementById('payButton').addEventListener('click', function() {
     var handler = PaystackPop.setup({
-        key: '<?php echo PAYSTACK_PUBLIC_KEY; ?>',
+        key: '<?php echo e(PAYSTACK_PUBLIC_KEY); ?>',
         email: '<?php echo e($email); ?>',
-        amount: <?php echo $amount; ?>,
+        amount: <?php echo (int)$amount; ?>,
         ref: '<?php echo e($reference); ?>',
         callback: function(response) {
             // Payment successful

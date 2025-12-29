@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role'] = $user['role'];
             $_SESSION['first_name'] = $user['first_name'];
             
-            setFlash('success', 'Welcome back, ' . $user['first_name'] . '!');
+            setFlash('success', 'Welcome back, ' . e($user['first_name']) . '!');
             
             // Redirect to intended page or home
             $redirect = $_GET['redirect'] ?? '/public/index.php';

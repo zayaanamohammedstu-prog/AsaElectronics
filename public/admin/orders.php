@@ -139,7 +139,7 @@ $orders = $stmt->fetchAll();
                     </td>
                     <td><?php echo e($order['city'] . ', ' . $order['country']); ?></td>
                     <td>
-                        <button class="btn btn-outline" onclick='viewOrder(<?php echo json_encode($order); ?>)'>
+                        <button class="btn btn-outline" onclick='viewOrder(<?php echo htmlspecialchars(json_encode($order), ENT_QUOTES); ?>)'>
                             <i class="fas fa-eye"></i> View
                         </button>
                     </td>
